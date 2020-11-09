@@ -15,7 +15,8 @@ In this notebook you will train your first neural network. Feel free to look bac
 #### Install dependencies freeze by poetry
 """
 
-
+!python3 -m pip install --upgrade pip
+!python3 -m pip install matplotlib numpy scikit-learn==0.23.2
 
 """#### Import the different module we will need in this notebook 
 
@@ -360,10 +361,10 @@ It's on 12 points because there is a lot of functions to fill but also we want t
 To have all the point your neural network needs to have a Test accuracy > 92 % !!
 """
 
-minibatch_size=20 #test = 100 init = 5 
+minibatch_size=25 #test = 100 init = 5 
 
 nepoch = 20 #test = 5 init =10 
-learning_rate = 0.1
+learning_rate = 0.08
 
 # 784   = nb de pixel par image
 # 25 25 = nb de layer intermédiaire
@@ -428,3 +429,15 @@ Also explain how the neural network behave when changing them ?
 TODO
 """
 
+Le minibatch size corrspond à la quantité de donnée que l'on va utiliser par batch, cela permet de ne pas donner en entrée toutes les data en même temps.
+
+Epoch correspond au nombre de fois où l'algorithme va regarder les training data. Il ne doit pas être trop haut. En effet, à partir d'un certain moment l'erreur va converger 
+et stagner. Il est donc inutile de le choisir trop élevé.
+
+Le learning rate représente la variable de régulation pour éviter que certains noeuds ne prennent trop d'importance par rapport à d'autres. 
+Pour une valeur trop élevée l'algorithme manquera le minimum locale. A l'inverse si il est trop petit, il s'arrêtera au premier minimum locale sans jamais trouver le globale.
+De plus, l'algorithme prendra beaucoup plus de temps à s'effectuer.
+
+La config représente le nombre de layers ainsi que leurs noeuds. Plus il y a de noeud par layers plus il y aura de possibilité à tester. Trop peu de noeuds intermédiaire entre
+l'entrée et la sortie diminue le nombre de variations possible. Inversement, un grand nombre de noeuds intermédiaire entraîne une augmentation des possibilités donc un allongement
+du temps de calcul. Il faut alors ajuster les paramètres précédents pour prendre en compte les nouvelles informations pour éviter qu'il ne soit trop lent.
