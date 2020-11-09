@@ -406,9 +406,10 @@ for i in range(0, nsample):
     true_target = int(y_true[i])   # Todo
     nb+=1
     if prediction != true_target:
+        pass
         # TODO
         miss+=1
-        pass
+        
 
 print("nombre de raté = ", miss,"nombre de boucle = ",nb)
 
@@ -426,7 +427,6 @@ Also explain how the neural network behave when changing them ?
 ## Open analysis answer
 
 TODO
-"""
 
 Le minibatch size corrspond à la quantité de donnée que l'on va utiliser par batch, cela permet de ne pas donner en entrée toutes les data en même temps.
 
@@ -440,3 +440,5 @@ De plus, l'algorithme prendra beaucoup plus de temps à s'effectuer.
 La config représente le nombre de layers ainsi que leurs noeuds. Plus il y a de noeud par layers plus il y aura de possibilité à tester. Trop peu de noeuds intermédiaire entre
 l'entrée et la sortie diminue le nombre de variations possible. Inversement, un grand nombre de noeuds intermédiaire entraîne une augmentation des possibilités donc un allongement
 du temps de calcul. Il faut alors ajuster les paramètres précédents pour prendre en compte les nouvelles informations pour éviter qu'il ne soit trop lent.
+"""
+
