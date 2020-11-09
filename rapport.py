@@ -15,8 +15,7 @@ In this notebook you will train your first neural network. Feel free to look bac
 #### Install dependencies freeze by poetry
 """
 
-!python3 -m pip install --upgrade pip
-!python3 -m pip install matplotlib numpy scikit-learn==0.23.2
+
 
 """#### Import the different module we will need in this notebook 
 
